@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--Bootstrap-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <title>Entrega Coder</title>
+</head>
+
+<body>
+
+    <!--BANNER-->
+    <div class="banner animated tada">
+        <div class=" big-text animated tada">Tienda de sofa</div>
+         <div>todo para el hogar</div>
+       </div>
+   
+    <!--EXPRESA TU ESTILO-->
+    <div class="container-editor">
+        <div class="editor__item">
+            <img src="https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt="" class="editor__img">
+            <p class="editor__circle">EXPRESA TU ESTILO!</p>
+        </div>
+        <div class="editor__item">
+            <img src="https://images.pexels.com/photos/1726074/pexels-photo-1726074.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt="" class="editor__img">
+            <p class="editor__circle">EXPRESA TU ESTILO!</p>
+        </div>
+    </div>
+
+
+    
+    <!--ICONOS-->
+    <div>
+        <section class="container-tips">
+            <div class="tip">
+                <i class="fas fa-truck"></i>
+                <h2 class="tip__title">Envío Gratis</h2>
+                <p class="tip__txt">Con la compra mayor a $10.000 el envío es completamente gratis</p>
+            </div>
+            <div class="tip">
+                <i class="far fa-handshake"></i>
+                <h2 class="tip__title">Garantía</h2>
+                <p class="tip__txt">Todos nuestros productos cuentan con garantía mínima de 5 años!.</p>
+            </div>
+            <div class="tip">
+                <i class="fas fa-money-check-alt"></i>
+                <h2 class="tip__title">Medios de pago</h2>
+                <p class="tip__txt">Aceptamos todos los métodos de pago, efectivo, tarjetas de crédito y débito.</p>
+            </div>
+        </section>
+    </div>
+    </main>
+
+    <!--Tabla del carrito-->
+    <div class="container">
+        <h3>NUESTROS MODELOS</h3>
+        <hr>
+        <!--TARJETA DE  PRODUCTOS-->
+    <div class="container ">
+        <div class="row">
+        <template id="template-productos">
+            <div class='col-md-6 col-sm-6 '> 
+                <div class="card ml-5 mx-auto col-md-6" style= "width: 40rem;">
+                    <img class='mx-auto img-thumbnail' width="400rem" height="4000rem" />
+                    <div class="card-body text-center mx-auto">
+                        <h5 class="card-titulo"></h5>
+                        <p class="card-precio"></p> 
+                        <button href="#" class="btn btn-dark">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+ </div>
+
+        <div class="my-5">
+            <h4>Carrito de compras</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acción</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="items"></tbody>
+                <tfoot>
+                    <tr id="footer-carrito">
+                        <th scope="row" colspan="5"> Carrito vacío- comience a comprar</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="row" id="contenedor-productos"></div>
+    </div>
+
+    <template id="template-footer">
+        <th scope="row" colspan="2">Total productos</th>
+        <td>10</td>
+        <td>
+            <button class="btn btn-danger btn-sm" id="vaciar-carrito">vaciar todo</button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+    <!--visualizo template-carrito al hacer una compra-->
+    <template id="template-carrito">
+        <tr>
+            <th scope="row">id</th>
+            <td>Café</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-info btn-sm">
+                    +
+                </button>
+                <button class="btn btn-danger btn-sm">
+                    -
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+        </tr>
+    </template>
+
+    <!--FOOTER-->
+    <footer class="main-footer">
+        <div class="footer__section">
+            <h2 class="footer__title">Ubicación <i class="fas fa-map-marker-alt"></i></h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94712.00836022811!2d-72.61638132925759!3d42.11281915395362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6e62c08e4b81f%3A0x1d1808da41b9aabd!2sSpringfield%2C%20Massachusetts%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1642110642737!5m2!1ses-419!2sar"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <p class="footer__txt">Contamos con local físico para que puedas probar todos nuestros productos.</p>
+        </div>
+        <div class="footer__section">
+            <h2 class="footer__title">Dirección:</h2>
+            <p class="footer__txt">Av. Siempre viva 1234</p>
+            <h2 class="footer__title">Contactanos:</h2>
+            <p class="footer__txt">Teléfono : +121 098 8907 9987</p>
+            <p class="footer__txt">Email : info@ejemplo.com</p>
+        </div>
+        <div class="footer__section">
+            <h2 class="footer__title">Secciones de la página</h2>
+            <a href="" class="footer__link">Home</a>
+            <a href="" class="footer__link">Sobre nosotros</a>
+            <a href="" class="footer__link">Mis compras</a>
+            <a href="" class="footer__link">Contacto</a>
+        </div>
+        <div class="footer__section">
+            <h2 class="footer__title">Suscribite!</h2>
+            <p class="footer__txt">Suscribite para recibir diariamente nuestras mejores ofertas .</p>
+            <input type="email" class="footer__input" placeholder="Escriba su email">
+        </div>
+        <p class="copy">© 2022. Todos los derechos reservados | Proyecto para coderhouse Rodrigo Ibañez</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
